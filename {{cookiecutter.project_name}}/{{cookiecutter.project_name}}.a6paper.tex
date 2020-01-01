@@ -1,0 +1,84 @@
+\documentclass[
+    oneside,
+    final,
+    9pt
+]{memoir}
+
+\setstocksize{105mm}{148mm}
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\setlrmarginsandblock{12mm}{12mm}{*}
+\setulmarginsandblock{12mm}{12mm}{*}
+\setheadfoot{12pt}{10pt}
+\checkandfixthelayout
+
+%Russian-specific packages
+%--------------------------------------
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, main=russian]{babel}
+%--------------------------------------
+ 
+%Hyphenation rules
+%--------------------------------------
+\usepackage{hyphenat}
+% \hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+%--------------------------------------
+
+% Times-совместимый шрифт для математики
+\usepackage{tempora}
+\DeclareSymbolFont{letters}{OML}{ztmcm}{m}{it}
+\DeclareSymbolFontAlphabet{\mathnormal}{letters}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[style=russian]{csquotes}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{datetime}
+\usepackage{framed}
+\usepackage{fancybox}
+\usepackage{enumitem}
+
+\newcommand{\wt}{\mathop{\mathrm{wt}}}      % создаем полезные операторы, например wt()
+\newcommand{\supp}{\mathop{\mathrm{supp}}}
+\newcommand{\len}{\mathop{\mathrm{len}}}
+\newcommand*{\No}{\textnumero}
+\newcommand{\NP}{\mathbb{NP}}
+
+\newcounter{nbilet}
+\newcommand{\question}{\item}
+\newenvironment{questions}{
+    \newpage
+    \begin{center}
+        \texttt{БИЛЕТ~\addtocounter{nbilet}{1}\arabic{nbilet}.}
+    \end{center}
+
+    \begin{enumerate}[label=\arabic*)]
+}{
+    \end{enumerate}
+    \vspace*{\fill}
+    \begin{minipage}{0.5\textwidth}
+      \begin{flushleft}
+        Ученый секретарь\\кафедры ИБ\\
+      \end{flushleft}
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+      \begin{flushright}
+        И.~В.~Чижов
+      \end{flushright}
+    \end{minipage}
+}
+
+
+\makepagestyle{exampapers}
+\makeoddhead{exampapers}{
+    \small{Постквантовые криптосистемы с открытым ключом, магистратура}
+}{}{}
+\makeoddfoot{exampapers}{}{}{}
+\makeheadrule{exampapers}{\textwidth}{1pt}
+
+\begin{document}
+    \pagestyle{exampapers}
+    \input{ {{cookiecutter.project_name}}.source.tex }
+
+\end{document}

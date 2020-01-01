@@ -1,0 +1,22 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% At first compile the {{cookiecutter.project_name}}.a6paper.tex %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[
+    a4paper,
+    oneside
+]{article}
+
+\usepackage{grffile}
+\usepackage{pdfpages}
+
+\usepackage[
+    scale=1,
+    marginparsep=0pt,
+    marginparwidth=0pt,
+    landscape    
+]{geometry}
+
+
+\begin{document}
+    \includepdf[nup=2x2, pages={1-}, frame]{ {{cookiecutter.project_name}}.a6paper.pdf}
+\end{document}
