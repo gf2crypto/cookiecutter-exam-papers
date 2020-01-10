@@ -18,5 +18,11 @@
 
 
 \begin{document}
-    \includepdf[nup=2x2, pages={1-}, frame]{ {{cookiecutter.project_name}}.a6paper.pdf}
+    \includepdf[
+    	nup=2x2,
+    	pages={1-},
+    	frame,
+    	column=true,
+    	noautoscale
+    ]{ {{cookiecutter.project_name}}.a6paper.pdf}
 \end{document}
