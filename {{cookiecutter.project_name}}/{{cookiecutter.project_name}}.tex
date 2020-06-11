@@ -1,6 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % At first compile the {{cookiecutter.project_name}}.a6paper.tex %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{% raw %}
 \documentclass[
     a4paper,
     oneside
@@ -24,5 +25,10 @@
     	frame,
     	column=true,
     	noautoscale
-    ]{ {{cookiecutter.project_name}}.a6paper.pdf}
+    ]{
+{%- endraw -%}
+    {{cookiecutter.project_name}}.a6paper.pdf
+{%- raw -%}
+}
 \end{document}
+{% endraw %}

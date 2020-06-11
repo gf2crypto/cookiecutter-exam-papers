@@ -1,3 +1,4 @@
+{%- raw -%}
 \documentclass[
     oneside,
     final,
@@ -79,6 +80,10 @@
 
 \begin{document}
     \pagestyle{exampapers}
-    \input{ {{cookiecutter.project_name}}.source.tex }
-
+    \input{
+{%- endraw -%}
+{{cookiecutter.project_name}}.source.tex
+{%- raw -%}
+}
 \end{document}
+{% endraw %}
